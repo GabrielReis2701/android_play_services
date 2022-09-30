@@ -36,8 +36,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:taskAffinity=""
-        android:theme="@style/AppTheme"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        android:theme="@style/AppTheme" >
+        //tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <activity
             android:name="org.tensorflow.lite.examples.classification.playservices.CameraActivity"
