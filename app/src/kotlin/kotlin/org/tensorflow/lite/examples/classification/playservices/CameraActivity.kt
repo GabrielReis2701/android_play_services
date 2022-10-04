@@ -19,6 +19,7 @@ package org.tensorflow.lite.examples.classification.playservices
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
@@ -103,6 +104,7 @@ class CameraActivity : AppCompatActivity() {
         // If image analysis is in paused state, resume it
         pauseAnalysis = false
         activityCameraBinding.imagePredicted.visibility = View.GONE
+        val resulta =activityCameraBinding.textPrediction.toString(); //pega o resultado do label para passar em um Intent
       } else {
         // Otherwise, pause image analysis and freeze image
         pauseAnalysis = true

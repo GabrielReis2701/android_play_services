@@ -5,12 +5,16 @@
       <map>
         <entry key="..\:/Users/UNIR/AndroidStudioProjects/examples/lite/examples/image_classification/android_play_services/app/src/main/res/layout-land/activity_camera.xml" value="0.2310405643738977" />
         <entry key="..\:/Users/UNIR/AndroidStudioProjects/examples/lite/examples/image_classification/android_play_services/app/src/main/res/layout/activity_camera.xml" value="0.25" />
+        <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/drawable/cor_botao.xml" value="0.1795" />
+        <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/drawable/cormain.xml" value="0.1795" />
         <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/drawable/ic_launcherli_background.xml" value="0.1725" />
         <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/drawable/ic_shutter.xml" value="0.1795" />
         <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/drawable/ic_shutter_focused.xml" value="0.1795" />
         <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/drawable/ic_shutter_normal.xml" value="0.1795" />
         <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/drawable/ic_shutter_pressed.xml" value="0.155" />
         <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/layout/activity_camera.xml" value="0.16354166666666667" />
+        <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/layout/activity_main.xml" value="0.25729166666666664" />
+        <entry key="..\:/Users/UNIR/Documents/g/android_play_services/app/src/main/res/layout/activity_sinais_libras.xml" value="0.25729166666666664" />
       </map>
     </option>
   </component>
