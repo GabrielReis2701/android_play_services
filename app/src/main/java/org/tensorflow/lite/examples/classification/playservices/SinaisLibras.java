@@ -37,7 +37,7 @@ public class SinaisLibras extends AppCompatActivity {
             if(sinal==resultado){
                 AlertDialog.Builder janela = new AlertDialog.Builder(this);
                 janela.setTitle("Resultado da Atividade");
-                janela.setMessage("Parabens vc Acertou!!!!!");
+                janela.setMessage("Parabens vc Acertou!!!!!\n vc Fez a Letra: " + resultado);
                 janela.setNeutralButton("OK",null);
                 janela.show();
             }
