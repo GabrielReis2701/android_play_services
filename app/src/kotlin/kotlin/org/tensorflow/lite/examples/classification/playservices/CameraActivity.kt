@@ -96,6 +96,9 @@ class CameraActivity : AppCompatActivity() {
         Log.d(TAG, "TFLite in Play Services initialized successfully.")
         classifier = ImageClassificationHelper(this, MAX_REPORT, useGpu)
       }
+      val sinalget = intent.extras
+      var dados = sinalget?.getString("desejado")
+
 
     activityCameraBinding.cameraCaptureButton.setOnClickListener {
       // Disable all camera controls
@@ -104,7 +107,12 @@ class CameraActivity : AppCompatActivity() {
         // If image analysis is in paused state, resume it
         pauseAnalysis = false
         activityCameraBinding.imagePredicted.visibility = View.GONE
-        val resulta =activityCameraBinding.textPrediction.toString(); //pega o resultado do label para passar em um Intent
+        var resulta =activityCameraBinding.textPrediction.toString(); //pega o resultado do label para passar em um Intent
+        var desejado = dados.toString();
+        val intentsinal = Intent(this,SinaisLibras::class.java)
+        intentsinal.putExtra("predict",resulta)
+        intentsinal.putExtra("desejado2",desejado)
+        startActivity(intentsinal)
       } else {
         // Otherwise, pause image analysis and freeze image
         pauseAnalysis = true
