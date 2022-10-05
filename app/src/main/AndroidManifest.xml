@@ -22,13 +22,15 @@
             android:name=".SinaisLibras"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".CameraActivity"
-            android:exported="true"
+            android:exported="false"
             android:rotationAnimation="seamless"
-            tools:targetApi="O">
+            tools:targetApi="O"
+            />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

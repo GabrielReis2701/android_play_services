@@ -55,7 +55,7 @@ class CameraActivity : AppCompatActivity() {
   private val permissions = listOf(Manifest.permission.CAMERA)
   private val permissionsRequestCode = Random.nextInt(0, 10000)
 
-  private var lensFacing: Int = CameraSelector.LENS_FACING_FRONT
+  private var lensFacing: Int = CameraSelector.LENS_FACING_BACK
   private val isFrontFacing
     get() = lensFacing == CameraSelector.LENS_FACING_FRONT
 
@@ -107,7 +107,8 @@ class CameraActivity : AppCompatActivity() {
         // If image analysis is in paused state, resume it
         pauseAnalysis = false
         activityCameraBinding.imagePredicted.visibility = View.GONE
-        var resulta =activityCameraBinding.textPrediction.toString(); //pega o resultado do label para passar em um Intent
+        var resulta = ""
+        resulta =activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
         var desejado = dados.toString();
         val intentsinal = Intent(this,SinaisLibras::class.java)
         intentsinal.putExtra("predict",resulta)
@@ -252,7 +253,7 @@ class CameraActivity : AppCompatActivity() {
       // Update the text and UI
       activityCameraBinding.textPrediction.text =
         recognitions.subList(0, MAX_REPORT).joinToString(separator = "\n") {
-          "${"%.1f".format(it.confidence*100)}${" % "} ${it.title}" //Muda o Formato do Label onde é exibido os predictis
+          /*"${"%.1f".format(it.confidence*100)}${" % "}*/"${it.title}" //Muda o Formato do Label onde é exibido os predictis
         }
 
       // Make sure all UI elements are visible
