@@ -96,8 +96,8 @@ class CameraActivity : AppCompatActivity() {
         Log.d(TAG, "TFLite in Play Services initialized successfully.")
         classifier = ImageClassificationHelper(this, MAX_REPORT, useGpu)
       }
-      val sinalget = intent.extras
-      var dados = sinalget?.getString("desejado")
+      //val sinalget = intent.extras
+     // var dados = sinalget?.getString("desejado")
 
 
     activityCameraBinding.cameraCaptureButton.setOnClickListener {
@@ -109,10 +109,10 @@ class CameraActivity : AppCompatActivity() {
         activityCameraBinding.imagePredicted.visibility = View.GONE
         var resulta = ""
         resulta =activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
-        var desejado = dados.toString();
+       // var desejado = dados.toString();
         val intentsinal = Intent(this,SinaisLibras::class.java)
         intentsinal.putExtra("predict",resulta)
-        intentsinal.putExtra("desejado2",desejado)
+        //intentsinal.putExtra("desejado2",desejado)
         startActivity(intentsinal)
       } else {
         // Otherwise, pause image analysis and freeze image

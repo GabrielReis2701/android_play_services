@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/cormain"
+    android:tag="K"
     tools:context=".SinaisLibras">
 
     <ImageButton
@@ -14,7 +15,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="80dp"
         android:onClick="onclick"
-        android:tag="0"
+        android:tag="A"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ap" />
@@ -26,7 +27,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="80dp"
         android:onClick="onclick"
-        android:tag="1"
+        android:tag="B"
         app:layout_constraintStart_toEndOf="@+id/bt_a"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bp" />
@@ -38,7 +39,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="80dp"
         android:onClick="onclick"
-        android:tag="2"
+        android:tag="C"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cp" />
@@ -49,7 +50,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="80dp"
         android:onClick="onclick"
-        android:tag="3"
+        android:tag="D"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
@@ -63,7 +64,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="4"
+        android:tag="E"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_a"
         app:srcCompat="@drawable/ep" />
@@ -75,7 +76,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="5"
+        android:tag="F"
         app:layout_constraintStart_toEndOf="@+id/imageButton4"
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
         app:srcCompat="@drawable/fp" />
@@ -87,7 +88,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="6"
+        android:tag="G"
         app:layout_constraintStart_toEndOf="@+id/imageButton5"
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
         app:srcCompat="@drawable/gp" />
@@ -99,7 +100,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="7"
+        android:tag="H"
         app:layout_constraintStart_toEndOf="@+id/imageButton6"
         app:layout_constraintTop_toBottomOf="@+id/imageButton3"
         app:srcCompat="@drawable/hp" />
@@ -111,7 +112,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="8"
+        android:tag="I"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4"
         app:srcCompat="@drawable/ip" />
@@ -123,7 +124,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="9"
+        android:tag="J"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
         app:layout_constraintTop_toBottomOf="@+id/imageButton5"
         app:srcCompat="@drawable/jp" />
@@ -147,7 +148,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="11"
+        android:tag="L"
         app:layout_constraintStart_toEndOf="@+id/imageButton10"
         app:layout_constraintTop_toBottomOf="@+id/imageButton7"
         app:srcCompat="@drawable/lp" />
@@ -159,7 +160,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="12"
+        android:tag="M"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton8"
         app:srcCompat="@drawable/mp" />
@@ -171,7 +172,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="13"
+        android:tag="N"
         app:layout_constraintStart_toEndOf="@+id/imageButton12"
         app:layout_constraintTop_toBottomOf="@+id/imageButton9"
         app:srcCompat="@drawable/np" />
@@ -183,7 +184,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="14"
+        android:tag="O"
         app:layout_constraintStart_toEndOf="@+id/imageButton13"
         app:layout_constraintTop_toBottomOf="@+id/imageButton10"
         app:srcCompat="@drawable/op" />
@@ -195,7 +196,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="15"
+        android:tag="P"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toEndOf="@+id/imageButton14"
@@ -209,7 +210,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="16"
+        android:tag="Q"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton12"
         app:srcCompat="@drawable/qp" />
@@ -221,7 +222,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="17"
+        android:tag="R"
         app:layout_constraintStart_toEndOf="@+id/imageButton16"
         app:layout_constraintTop_toBottomOf="@+id/imageButton13"
         app:srcCompat="@drawable/rp" />
@@ -233,7 +234,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="18"
+        android:tag="S"
         app:layout_constraintStart_toEndOf="@+id/imageButton17"
         app:layout_constraintTop_toBottomOf="@+id/imageButton14"
         app:srcCompat="@drawable/sp" />
@@ -245,7 +246,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="19"
+        android:tag="T"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toEndOf="@+id/imageButton18"
@@ -259,7 +260,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:onClick="onclick"
-        android:tag="20"
+        android:tag="U"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton16"
         app:srcCompat="@drawable/up" />
@@ -271,7 +272,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:onClick="onclick"
-        android:tag="21"
+        android:tag="V"
         app:layout_constraintStart_toEndOf="@+id/imageButton20"
         app:layout_constraintTop_toBottomOf="@+id/imageButton17"
         app:srcCompat="@drawable/vp" />
@@ -283,7 +284,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:onClick="onclick"
-        android:tag="22"
+        android:tag="W"
         app:layout_constraintStart_toEndOf="@+id/imageButton21"
         app:layout_constraintTop_toBottomOf="@+id/imageButton18"
         app:srcCompat="@drawable/wp" />
@@ -295,7 +296,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:onClick="onclick"
-        android:tag="23"
+        android:tag="X"
         app:layout_constraintStart_toEndOf="@+id/imageButton22"
         app:layout_constraintTop_toBottomOf="@+id/imageButton19"
         app:srcCompat="@drawable/xp" />
@@ -307,7 +308,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:onClick="onclick"
-        android:tag="24"
+        android:tag="Y"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton20"
         app:srcCompat="@drawable/yp" />
@@ -319,7 +320,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:onClick="onclick"
-        android:tag="25"
+        android:tag="Z"
         app:layout_constraintStart_toEndOf="@+id/imageButton24"
         app:layout_constraintTop_toBottomOf="@+id/imageButton21"
         app:srcCompat="@drawable/zp" />
