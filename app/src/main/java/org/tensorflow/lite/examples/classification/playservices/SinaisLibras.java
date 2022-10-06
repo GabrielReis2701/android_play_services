@@ -14,34 +14,12 @@ import android.widget.ImageButton;
 import java.sql.SQLOutput;
 
 public class SinaisLibras extends AppCompatActivity {
-    //private ImageButton bt_s,bt_a;
     private String sinal="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sinais_libras);
-
-        /*bt_a = findViewById(R.id.bt_a);
-        bt_a.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sinal = "A";
-                Intent i = new Intent(SinaisLibras.this,CameraActivity.class);
-                i.putExtra("desejado",sinal);
-                startActivity(i);
-            }
-        });
-        bt_s = findViewById(R.id.bt_s);
-        bt_s.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                sinal = "S";
-                Intent i = new Intent(SinaisLibras.this,CameraActivity.class);
-                i.putExtra("desejado",sinal);
-                startActivity(i);
-            }
-        });*/
         Intent volto = getIntent();
         if(volto.getStringExtra("predict") != null){
             String resultado =volto.getStringExtra("predict");
@@ -64,8 +42,7 @@ public class SinaisLibras extends AppCompatActivity {
         }
     }
     public void onclick(View button){
-        int tag =-1;
-        tag = (int) Integer.parseInt(button.getTag().toString());
+        int tag = (int) Integer.parseInt(button.getTag().toString());
         sinal="";
         if (tag==0){
             sinal = "A";
