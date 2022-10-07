@@ -96,9 +96,6 @@ class CameraActivity : AppCompatActivity() {
         Log.d(TAG, "TFLite in Play Services initialized successfully.")
         classifier = ImageClassificationHelper(this, MAX_REPORT, useGpu)
       }
-      //val sinalget = intent.extras
-     // var dados = sinalget?.getString("desejado")
-
 
     activityCameraBinding.cameraCaptureButton.setOnClickListener {
       // Disable all camera controls
@@ -107,13 +104,6 @@ class CameraActivity : AppCompatActivity() {
         // If image analysis is in paused state, resume it
         pauseAnalysis = false
         activityCameraBinding.imagePredicted.visibility = View.GONE
-        var resulta = ""
-        resulta =activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
-       // var desejado = dados.toString();
-        val intentsinal = Intent(this,SinaisLibras::class.java)
-        intentsinal.putExtra("predict",resulta)
-        //intentsinal.putExtra("desejado2",desejado)
-        startActivity(intentsinal)
       } else {
         // Otherwise, pause image analysis and freeze image
         pauseAnalysis = true
@@ -121,6 +111,7 @@ class CameraActivity : AppCompatActivity() {
           Matrix().apply {
             postRotate(imageRotationDegrees.toFloat())
             if (isFrontFacing) postScale(-1f, 1f)
+
           }
         val uprightImage =
           Bitmap.createBitmap(
@@ -134,6 +125,12 @@ class CameraActivity : AppCompatActivity() {
           )
         activityCameraBinding.imagePredicted.setImageBitmap(uprightImage)
         activityCameraBinding.imagePredicted.visibility = View.VISIBLE
+        //passa o label do predict para a classe sinal assim que a tela for congelada
+        var resulta = ""
+        resulta =activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
+        val intentsinal = Intent(this,SinaisLibras::class.java)
+        intentsinal.putExtra("predict",resulta)
+        startActivity(intentsinal)
       }
 
       // Re-enable camera controls
