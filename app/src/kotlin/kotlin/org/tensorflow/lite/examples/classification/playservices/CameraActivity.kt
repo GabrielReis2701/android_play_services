@@ -51,6 +51,8 @@ class CameraActivity : AppCompatActivity() {
 
   private lateinit var bitmapBuffer: Bitmap
 
+  private var predictText: PredictText = TODO()
+
   private val executor = Executors.newSingleThreadExecutor()
   private val permissions = listOf(Manifest.permission.CAMERA)
   private val permissionsRequestCode = Random.nextInt(0, 10000)
@@ -126,10 +128,8 @@ class CameraActivity : AppCompatActivity() {
         activityCameraBinding.imagePredicted.setImageBitmap(uprightImage)
         activityCameraBinding.imagePredicted.visibility = View.VISIBLE
         //passa o label do predict para a classe sinal assim que a tela for congelada
-        var resulta = ""
-        resulta =activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
+        predictText.predicttext=activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
         val intentsinal = Intent(this,SinaisLibras::class.java)
-        intentsinal.putExtra("predict",resulta)
         startActivity(intentsinal)
       }
 
