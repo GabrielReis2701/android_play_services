@@ -1,51 +1,80 @@
 package org.tensorflow.lite.examples.classification.playservices;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 
-import java.sql.SQLOutput;
 
 public class SinaisLibras extends AppCompatActivity {
     private static String sinal="",predict="";
-    PredictText predictText;
+    PredictText predictText = new PredictText();
+    private static final int CAMERA_ACTIVITY_REQUEST_CODE = 100;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sinais_libras);
-       // Intent volto = getIntent();
-       // String resultado =volto.getStringExtra("predict");
+    }
+    public void verificar(){
         sinal=predictText.getSinal();
-        predict=predictText.getPredicttext();
-        if(predict!= null){
+        predict=predictText.getPrediction();
+        if(predict!= "" && predict!=null){
             if(sinal.toUpperCase().equals(predict.toUpperCase())){
+                predictText.setSinal("");
                 AlertDialog.Builder janela = new AlertDialog.Builder(this);
-                janela.setTitle("Resu5ltado da Atividade");
+                janela.setTitle("Resultado da Atividade");
                 janela.setMessage("Parabens vc Acertou!!!!!\n vc Fez a Letra: " + predict);
                 janela.setNeutralButton("OK",null);
                 janela.show();
             }else{
+                predictText.setSinal("");
                 AlertDialog.Builder janela = new AlertDialog.Builder(this);
-                janela.setTitle("Resul5tado da Atividade");
+                janela.setTitle("Resultado da Atividade");
                 janela.setMessage("Vc deveria fazer a letra: "+sinal+"\n vc Fez a Letra: " + predict +" \nLetra Incorreta Por Favor Refaça");
                 janela.setNeutralButton("OK",null);
                 janela.show();
             }
+        }else if(predict.equals("")){
+            predictText.setSinal("");
+            AlertDialog.Builder janela = new AlertDialog.Builder(this);
+            janela.setTitle("Valores Digitados");
+            janela.setMessage("Sinal: "+sinal+"\n Predict: " + predict);
+            janela.setNeutralButton("OK",null);
+            janela.show();
+        }else{
+            AlertDialog.Builder janela = new AlertDialog.Builder(this);
+            janela.setTitle("ERRO!!!");
+            janela.setMessage("Erro valores nulos"+" Sinal: "+sinal+"\n Predict: " + predict);
+            janela.setNeutralButton("OK",null);
+            janela.show();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        verificar();
     }
     public void onclick(View button){
         predictText.setSinal(button.getTag().toString());
-        Intent i = new Intent(SinaisLibras.this,CameraActivity.class);
-        //i.putExtra("desejado",sinal);
-        startActivity(i);
+        Intent i = new Intent(SinaisLibras.this, CameraActivity.class);
+        startActivityForResult(i, CAMERA_ACTIVITY_REQUEST_CODE);
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAMERA_ACTIVITY_REQUEST_CODE) {
+            verificar();
+        }
+    }
+
+//    public void onclick(View button){
+//        predictText.setSinal(button.getTag().toString());
+//        Intent i = new Intent(SinaisLibras.this,CameraActivity.class);
+//        startActivity(i);
+//        verificar();
+//    }
 }

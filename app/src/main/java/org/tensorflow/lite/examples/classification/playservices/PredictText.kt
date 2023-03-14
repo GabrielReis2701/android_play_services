@@ -1,30 +1,15 @@
-package org.tensorflow.lite.examples.classification.playservices;
+package org.tensorflow.lite.examples.classification.playservices
 
-public class PredictText {
-    private String predicttext,sinal;
+class PredictText {
+    var prediction: String? = ""
+        get() = field
+        set(value) {
+            field = value
+        }
 
-    public PredictText(String predicttext, String sinal) {
-        this.predicttext = predicttext;
-        this.sinal = sinal;
-    }
-
-    public PredictText() {
-
-    }
-
-    public String getPredicttext() {
-        return predicttext;
-    }
-
-    public void setPredicttext(String predicttext) {
-        this.predicttext = predicttext;
-    }
-
-    public String getSinal() {
-        return sinal;
-    }
-
-    public void setSinal(String sinal) {
-        this.sinal = sinal;
-    }
+    var sinal: String? = ""
+        get() = field
+        set(value) {
+            field = value
+        }
 }
