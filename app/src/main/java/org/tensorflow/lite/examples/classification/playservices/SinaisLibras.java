@@ -30,7 +30,6 @@ public class SinaisLibras extends AppCompatActivity {
                 janela.setNeutralButton("OK",null);
                 janela.show();
             }else{
-                predictText.setSinal("");
                 AlertDialog.Builder janela = new AlertDialog.Builder(this);
                 janela.setTitle("Resultado da Atividade");
                 janela.setMessage("Vc deveria fazer a letra: "+sinal+"\n vc Fez a Letra: " + predict +" \nLetra Incorreta Por Favor Refaça");
@@ -38,7 +37,6 @@ public class SinaisLibras extends AppCompatActivity {
                 janela.show();
             }
         }else if(predict.equals("")){
-            predictText.setSinal("");
             AlertDialog.Builder janela = new AlertDialog.Builder(this);
             janela.setTitle("Valores Digitados");
             janela.setMessage("Sinal: "+sinal+"\n Predict: " + predict);
@@ -53,11 +51,6 @@ public class SinaisLibras extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        verificar();
-//    }
     public void onclick(View button){
         predictText.setSinal(button.getTag().toString());
         Intent i = new Intent(SinaisLibras.this, CameraActivity.class);
@@ -72,11 +65,4 @@ public class SinaisLibras extends AppCompatActivity {
             verificar();
         }
     }
-
-//    public void onclick(View button){
-//        predictText.setSinal(button.getTag().toString());
-//        Intent i = new Intent(SinaisLibras.this,CameraActivity.class);
-//        startActivity(i);
-//        verificar();
-//    }
 }

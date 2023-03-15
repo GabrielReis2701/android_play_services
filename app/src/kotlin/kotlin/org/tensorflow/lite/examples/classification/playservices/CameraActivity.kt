@@ -52,8 +52,6 @@ class CameraActivity : AppCompatActivity() {
 
   private lateinit var bitmapBuffer: Bitmap
 
-  private var predictText: PredictText = PredictText()
-
   private val executor = Executors.newSingleThreadExecutor()
   private val permissions = listOf(Manifest.permission.CAMERA)
   private val permissionsRequestCode = Random.nextInt(0, 10000)
