@@ -18,6 +18,7 @@ package org.tensorflow.lite.examples.classification.playservices
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -39,10 +40,10 @@ import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.android.gms.tflite.client.TfLiteInitializationOptions
 import com.google.android.gms.tflite.java.TfLite
+import org.tensorflow.lite.examples.classification.playservices.databinding.ActivityCameraBinding
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
-import org.tensorflow.lite.examples.classification.playservices.databinding.ActivityCameraBinding
 
 /** Activity that displays the camera and performs object detection on the incoming frames */
 class CameraActivity : AppCompatActivity() {
@@ -128,14 +129,16 @@ class CameraActivity : AppCompatActivity() {
         activityCameraBinding.imagePredicted.setImageBitmap(uprightImage)
         activityCameraBinding.imagePredicted.visibility = View.VISIBLE
         //passa o label do predict para a classe sinal assim que a tela for congelada
-        predictText.prediction = "deu certo"//activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
-        setResult(RESULT_OK);
+        var prediction = activityCameraBinding.textPrediction.text.toString() //pega o resultado do label para passar em um Intent
+        val intent = Intent()
+        intent.putExtra("prediction", prediction)
+        setResult(Activity.RESULT_OK, intent)
+        finish()
       }
       // Re-enable camera controls
       it.isEnabled = true
     }
   }
-
   override fun onDestroy() {
     // Terminate all outstanding analyzing jobs (if there is any).
     executor.apply {

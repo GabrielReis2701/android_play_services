@@ -20,7 +20,7 @@ public class SinaisLibras extends AppCompatActivity {
     }
     public void verificar(){
         sinal=predictText.getSinal();
-        predict=predictText.getPrediction();
+        //predict=predictText.getPrediction();
         if(predict!= "" && predict!=null){
             if(sinal.toUpperCase().equals(predict.toUpperCase())){
                 predictText.setSinal("");
@@ -53,11 +53,11 @@ public class SinaisLibras extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        verificar();
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        verificar();
+//    }
     public void onclick(View button){
         predictText.setSinal(button.getTag().toString());
         Intent i = new Intent(SinaisLibras.this, CameraActivity.class);
@@ -67,6 +67,8 @@ public class SinaisLibras extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_ACTIVITY_REQUEST_CODE) {
+            String prediction = data.getStringExtra("prediction");
+            predict= prediction;
             verificar();
         }
     }
